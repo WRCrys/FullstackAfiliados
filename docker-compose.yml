@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  fullstackafiliados.api:
+    image: ${DOCKER_REGISTRY-}fullstackafiliadosapi
+    build:
+      context: .
+      dockerfile: src/FullstackAfiliados.Api/Dockerfile

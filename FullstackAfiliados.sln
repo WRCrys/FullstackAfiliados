@@ -1,12 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackAfiliados.Api", "src\FullstackAfiliados.Api\FullstackAfiliados.Api.csproj", "{7D187714-4577-4BBB-8107-8B9A54209A1F}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullstackAfiliados.Api", "src\FullstackAfiliados.Api\FullstackAfiliados.Api.csproj", "{7D187714-4577-4BBB-8107-8B9A54209A1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackAfiliados.Business", "src\FullstackAfiliados.Business\FullstackAfiliados.Business.csproj", "{D0BE8E8C-5CF6-4229-8AA6-A41260839A14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullstackAfiliados.Business", "src\FullstackAfiliados.Business\FullstackAfiliados.Business.csproj", "{D0BE8E8C-5CF6-4229-8AA6-A41260839A14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackAfiliados.Data", "src\FullstackAfiliados.Data\FullstackAfiliados.Data.csproj", "{5D1BEE33-07A8-427D-98B0-BBFD23E7F009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullstackAfiliados.Data", "src\FullstackAfiliados.Data\FullstackAfiliados.Data.csproj", "{5D1BEE33-07A8-427D-98B0-BBFD23E7F009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackAfiliados.Tests", "src\FullstackAfiliados.Tests\FullstackAfiliados.Tests.csproj", "{59C4EEDB-36E1-4B76-9C1B-A70D40B0B87A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullstackAfiliados.Tests", "src\FullstackAfiliados.Tests\FullstackAfiliados.Tests.csproj", "{59C4EEDB-36E1-4B76-9C1B-A70D40B0B87A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F7A816BB-34AE-4ADE-ADB7-D96BAA42E47C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +35,12 @@ Global
 		{59C4EEDB-36E1-4B76-9C1B-A70D40B0B87A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59C4EEDB-36E1-4B76-9C1B-A70D40B0B87A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59C4EEDB-36E1-4B76-9C1B-A70D40B0B87A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A816BB-34AE-4ADE-ADB7-D96BAA42E47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A816BB-34AE-4ADE-ADB7-D96BAA42E47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A816BB-34AE-4ADE-ADB7-D96BAA42E47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A816BB-34AE-4ADE-ADB7-D96BAA42E47C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
