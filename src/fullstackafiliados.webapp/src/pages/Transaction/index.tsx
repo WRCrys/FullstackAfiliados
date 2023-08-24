@@ -37,29 +37,29 @@ export function TransactionPage() {
     });
 
     useEffect(() => {
-        async function get() {
-            try {
-                const response = await GetAllTransactions();
-
-                if (response.status !== 200)
-                    setSnackbarMessage({
-                        text: "Ops! Ocorreu um erro ao obter as transações.",
-                        type: "error"
-                    });
-
-                const transactions = response.data.data;
-
-                toGroupBySeller(transactions);
-
-                calculateFinalValue(transactions);
-            }
-            catch (error: any | AxiosError) {
-                console.log(error);
-            }
-        }
-
         get();
     }, []);
+
+    async function get() {
+        try {
+            const response = await GetAllTransactions();
+
+            if (response.status !== 200)
+                setSnackbarMessage({
+                    text: "Ops! Ocorreu um erro ao obter as transações.",
+                    type: "error"
+                });
+
+            const transactions = response.data.data;
+
+            toGroupBySeller(transactions);
+
+            calculateFinalValue(transactions);
+        }
+        catch (error: any | AxiosError) {
+            console.log(error);
+        }
+    }
 
     function calculateFinalValue(arrTransactions: Transaction[]) {
         let finalValue = 0;
@@ -133,16 +133,20 @@ export function TransactionPage() {
     }
 
     function handleSendFile() {
-        if (!file)
+        if (!file) {
             setSnackbarMessage({
                 text: "Selecione um arquivo para realizar o envio.",
                 type: "warning"
             });
-        else if (file.type !== "text/plain")
+            return;
+        }
+        else if (file.type !== "text/plain") {
             setSnackbarMessage({
-                text: "Você precisa selecionar um arquivo .txt!",
+                text: "Você precisa selecionar um arquivo TXT!",
                 type: "error"
             });
+            return;
+        }
 
         Swal.fire({
             title: 'Importação de transações',
@@ -158,13 +162,14 @@ export function TransactionPage() {
             if (result.isConfirmed) {
                 setLoading(true);
                 await SendFile(file!)
-                    .then(response => {
+                    .then(async response => {
                         if (response.status === 200) {
                             setSnackbarMessage({
                                 text: "Arquivo importado com sucesso!",
                                 type: "success"
                             });
                             setLoading(false);
+                            await get();
                         }
                     })
                     .catch(error => {
